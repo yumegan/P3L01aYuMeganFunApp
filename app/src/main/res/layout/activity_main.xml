@@ -10,16 +10,30 @@
         android:id="@+id/greeting_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello! Tap the buttons to increment or decrement"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:text="@string/greeting"
+        app:layout_constraintBottom_toTopOf="@+id/count_textview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+    <TextView
+        android:id="@+id/count_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/count"
+        android:padding="10dp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:background="#e9c7ff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
     <Button
         android:id="@+id/increment_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/greeting_textview"
+        app:layout_constraintTop_toBottomOf="@+id/count_textview"
         app:layout_constraintLeft_toRightOf="@id/decrement_button"
         app:layout_constraintRight_toRightOf="parent"
         android:text="@string/increment"/>
@@ -28,7 +42,7 @@
         android:onClick="decrement"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/greeting_textview"
+        app:layout_constraintTop_toBottomOf="@+id/count_textview"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/increment_button"
         android:text="@string/decrement"/>

@@ -1,6 +1,15 @@
 <resources>
-    <string name="app_name">P3L01aYuMeganFunApp</string>
+    <string name="app_name">P3L02aYuMeganGUIBasics</string>
     <string name="increment">Increment</string>
     <string name="decrement">Decrement</string>
     <string name="greet_dad">Hello Dad</string>
+    <string name="count">number: %1$d</string>
+    <string name="greeting">hello! find the lucky number</string>
+    <string name="congrats_msg">CONGRATS you found the lucky number!!</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+    </string-array>
 </resources>
