@@ -1,13 +1,16 @@
 package com.example.p3l01ayumeganfunapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     int count = 0;
     int lucky_num = 8;
 
+    TextView name_label;
+    EditText name;
     String [] planets;
 //    ColorDrawable defaultBackground;
     @Override
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         countDisplay = findViewById(R.id.count_textview);
         countDisplay.setText(getString(R.string.count, count));
 
+//        name_label = findViewById(R.id.name_label);
         planets = getResources().getStringArray(R.array.planets_array);
 
 //        defaultBackground = ((ColorDrawable) view.getBackground()).getColor();
@@ -58,13 +64,19 @@ public class MainActivity extends AppCompatActivity {
         if(count == lucky_num){
             System.out.println("lucky!");
             greetingDisplay.setText(R.string.congrats_msg);
-            this.getWindow().getDecorView().setBackgroundColor(0xffffff00);
+            this.getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor(this, R.color.green_light)); //Color.rgb(209, 252, 204)
 
         }
         else{
             greetingDisplay.setText(R.string.greeting);
-            this.getWindow().getDecorView().setBackgroundColor(Color.LTGRAY);
+            this.getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 
         }
+    }
+
+    public void submit_name(View view) {
+        name = findViewById(R.id.edit_name);
+        greetingDisplay.setText(getString(R.string.greeting, name.getText()));
+
     }
 }

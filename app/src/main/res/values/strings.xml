@@ -4,8 +4,11 @@
     <string name="decrement">Decrement</string>
     <string name="greet_dad">Hello Dad</string>
     <string name="count">number: %1$d</string>
-    <string name="greeting">hello! find the lucky number</string>
+    <string name="greeting">hello %1$s! find the lucky number</string>
     <string name="congrats_msg">CONGRATS you found the lucky number!!</string>
+    <string name="name_label">what\'s your name?</string>
+    <string name="name_edit">name</string>
+    <string name="submit">submit</string>
     <string-array name="planets_array">
         <item>Mercury</item>
         <item>Venus</item>
