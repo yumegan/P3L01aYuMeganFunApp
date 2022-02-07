@@ -7,12 +7,14 @@
     <string name="greeting">hello %1$s! find the lucky number</string>
     <string name="congrats_msg">CONGRATS you found the lucky number!!</string>
     <string name="name_label">what\'s your name?</string>
-    <string name="name_edit">name</string>
+    <string name="name_edit">mr. tra</string>
     <string name="submit">submit</string>
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
+    <string-array name="colors_array">
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Purple</item>
     </string-array>
 </resources>

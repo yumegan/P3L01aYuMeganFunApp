@@ -19,11 +19,11 @@ public class MainActivity extends AppCompatActivity {
     TextView countDisplay;
     int count = 0;
     int lucky_num = 8;
+    int color_count = 0;
 
-    TextView name_label;
+    TextView color_text;
     EditText name;
-    String [] planets;
-//    ColorDrawable defaultBackground;
+    String [] colors;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +35,10 @@ public class MainActivity extends AppCompatActivity {
         greetingDisplay = findViewById(R.id.greeting_textview);
         countDisplay = findViewById(R.id.count_textview);
         countDisplay.setText(getString(R.string.count, count));
+        greetingDisplay.setText(getString(R.string.greeting, "anonymous"));
 
-//        name_label = findViewById(R.id.name_label);
-        planets = getResources().getStringArray(R.array.planets_array);
+        color_text = findViewById(R.id.color_text);
+        colors = getResources().getStringArray(R.array.colors_array);
 
 //        defaultBackground = ((ColorDrawable) view.getBackground()).getColor();
         incrementButton.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else{
-            greetingDisplay.setText(R.string.greeting);
+            greetingDisplay.setText(getString(R.string.greeting, name.getText()));
             this.getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 
         }
@@ -78,5 +79,10 @@ public class MainActivity extends AppCompatActivity {
         name = findViewById(R.id.edit_name);
         greetingDisplay.setText(getString(R.string.greeting, name.getText()));
 
+    }
+
+    public void next_color(View view) {
+        color_text.setText(colors[color_count++]);
+        //crashes after purple
     }
 }
