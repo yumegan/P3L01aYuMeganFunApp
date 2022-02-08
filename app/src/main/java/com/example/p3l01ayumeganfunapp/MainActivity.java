@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
     TextView color_text;
     EditText name;
+    String name_string = "anonymous";
     String [] colors;
+
+    RadioButton leftRadBut, rightRadBut;
+    Button next_color_button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
         color_text = findViewById(R.id.color_text);
         colors = getResources().getStringArray(R.array.colors_array);
+
+        leftRadBut = findViewById(R.id.radio_left);
+        rightRadBut = findViewById(R.id.radio_right);
+        next_color_button = findViewById(R.id.color_next);
 
 //        defaultBackground = ((ColorDrawable) view.getBackground()).getColor();
         incrementButton.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else{
-            greetingDisplay.setText(getString(R.string.greeting, name.getText()));
+            greetingDisplay.setText(getString(R.string.greeting, name_string));
             this.getWindow().getDecorView().setBackgroundColor(Color.WHITE);
 
         }
@@ -77,12 +87,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void submit_name(View view) {
         name = findViewById(R.id.edit_name);
-        greetingDisplay.setText(getString(R.string.greeting, name.getText()));
+        name_string = String.valueOf(name.getText());
+        greetingDisplay.setText(getString(R.string.greeting, name_string));
 
     }
 
     public void next_color(View view) {
-        color_text.setText(colors[color_count++]);
-        //crashes after purple
+        if(rightRadBut.isChecked())
+            color_count++;
+        else
+            color_count--;
+        color_count %= colors.length;
+        if (color_count < 0)
+            color_count = colors.length - 1;
+
+        color_text.setText(colors[color_count]);
+        next_color_button.setBackgroundColor(Color.parseColor(colors[color_count]));
     }
 }

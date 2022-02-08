@@ -9,9 +9,12 @@
     <string name="name_label">what\'s your name?</string>
     <string name="name_edit">mr. tra</string>
     <string name="submit">submit</string>
+    <string name="next">next color</string>
+    <string name="start_color">Red</string>
+    <string name="radio_forward">forward</string>
+    <string name="radio_backward">backward</string>
     <string-array name="colors_array">
         <item>Red</item>
-        <item>Orange</item>
         <item>Yellow</item>
         <item>Green</item>
         <item>Blue</item>
